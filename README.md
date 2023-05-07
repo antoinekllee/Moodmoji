@@ -1,6 +1,3 @@
-Here's a sample README file for your "Moodmoji" project:
-
-```markdown
 # Moodmoji 📱🤖
 
 Moodmoji is a fun and interactive iOS application that produces a list of matching emojis and GIFs based on a given string of text. Simply input your text and Moodmoji will generate relevant emojis and GIFs that you can easily copy and share! 🎉
