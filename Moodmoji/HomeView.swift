@@ -7,28 +7,45 @@
 
 import SwiftUI
 
-struct HomeView: View
-{
-    var body: some View {
-        NavigationView {
-            VStack {
-                NavigationLink(destination: InputView()) {
-                    Text("Start")
-                        .font(.title)
-                        .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                }
-            }
-            .navigationTitle("Home")
-        }
-    }
+struct HomeView: View {
+	var body: some View {
+		GeometryReader { geo in
+			NavigationView {
+				ZStack {
+					Image("Background")
+						.resizable()
+						.scaledToFill()
+						.edgesIgnoringSafeArea(.all)
+						.frame(width: geo.size.width, height: geo.size.height, alignment: .center)
+						.opacity(0.5)
+					
+					VStack {
+						Image("Title")
+							.resizable()
+							.scaledToFit()
+							.frame(width: 250, height: 300, alignment: .center)
+						
+						NavigationLink(destination: InputView()) {
+							Text("Start")
+								.font(.custom("AvenirNext-Bold", size: 30))
+								.foregroundColor(.white)
+								.padding()
+								.background(Color.blue)
+								.cornerRadius(10)
+								.shadow(color: .black.opacity(0.2), radius: 10, x: 0, y: 10)
+								.padding(40)
+						}
+					}
+				}
+			}
+			.frame(width: geo.size.width, height: geo.size.height)
+		}
+	}
 }
 
 struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
-    }
+	static var previews: some View {
+		HomeView()
+	}
 }
 
